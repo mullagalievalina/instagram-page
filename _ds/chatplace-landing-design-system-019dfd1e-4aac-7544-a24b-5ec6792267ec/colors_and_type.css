@@ -1,0 +1,272 @@
+/* ------------------------------------------------------------------
+   ChatPlace — Colors & Type
+   Source of truth: app-landing/assets/scss/variables.scss + fonts.scss
+   ------------------------------------------------------------------ */
+
+/* =====================  FONT FACES  ===================== */
+
+@font-face {
+  font-family: "PragmaticaExtended";
+  src: url("./fonts/PragmaticaExtended-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PragmaticaExtended";
+  src: url("./fonts/PragmaticaExtended-Black.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Black.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =====================  TOKENS  ===================== */
+
+:root {
+  /* ---- Font families ---- */
+  --font-display: "PragmaticaExtended", "Inter", system-ui, sans-serif;
+  --font-body:    "Roboto", system-ui, sans-serif;
+
+  /* ---- Brand palette (raw) ---- */
+  --c-black:        #0C0C0C;
+  --c-dark:         rgba(12, 12, 12, 0.80);
+  --c-dark-purple:  #261930;   /* dark UI surfaces, footer, navbars */
+  --c-white:        #FFFFFF;
+
+  --c-gray:         #F6F5F8;   /* card background (Platforms, etc) */
+  --c-gray-light:   #EDEBF2;
+  --c-gray-medium:  #7B7B7B;   /* secondary text */
+  --c-muted:        #E3E5EC;
+
+  /* Brand accents */
+  --c-green:        #BEFF53;   /* PRIMARY CTA — "ChatPlace green" */
+  --c-turquoise:    #24E6E0;   /* secondary CTA, Instagram theme */
+  --c-pink:         #E3248B;   /* hot pink, Action accent */
+  --c-light-red:    #FB4685;
+  --c-magenta:      #EF65E1;   /* a.k.a. "light pink" */
+  --c-pink-light:   #EF65E1;
+  --c-dark-pink:    #5F0C43;   /* deep magenta surface */
+  --c-blue:         #008CE1;   /* Telegram / "blue action" */
+  --c-violet:       #B6A4FF;
+  --c-violet-light: #EBE6FF;
+  --c-purple:       #8600F0;
+
+  /* Sub-brand: Virale (AI Reels) */
+  --c-virale-yellow:        #FFFF5A;
+  --c-virale-gray:          #CDCBD3;
+  --c-virale-gray-medium:   #3F3F3F;
+
+  /* Misc */
+  --c-gold:    #FFD700;
+  --c-silver:  #C0C0C0;
+  --c-bronze:  #CD7F32;
+
+  /* ---- Semantic foreground / background ---- */
+  --fg-1:        var(--c-black);          /* primary text */
+  --fg-2:        var(--c-dark);           /* secondary text (80% black) */
+  --fg-3:        var(--c-gray-medium);    /* muted text */
+  --fg-on-dark:  var(--c-white);
+
+  --bg-page:     var(--c-white);
+  --bg-card:     var(--c-gray);           /* light card surface */
+  --bg-dark:     var(--c-dark-purple);    /* dark mode surface */
+  --bg-black:    var(--c-black);
+
+  /* ---- Action accents (used on Action sections) ---- */
+  --accent-pink:      var(--c-pink);
+  --accent-dark-pink: var(--c-dark-pink);
+  --accent-blue:      var(--c-blue);
+
+  /* ---- Highlight pill ---- */
+  --highlight-bg: var(--c-green);
+  --highlight-fg: var(--c-black);
+
+  /* ---- Radii (extracted from components) ---- */
+  --r-pill:   200px;   /* buttons, switches */
+  --r-card:   24px;    /* PlatformCard */
+  --r-card-l: 32px;
+  --r-tab:    8px;     /* Tabs */
+  --r-tab-inner: 6px;
+  --r-badge:  35px;    /* HighlightText */
+  --r-tag:    10px;    /* AnnouncementBadge */
+  --r-circle: 50%;
+
+  /* ---- Shadows ---- */
+  --shadow-fixed-header: 17px 14px 44px 0 rgba(153, 153, 153, 0.15);
+  --shadow-nav-menu:     17px 28px 44px 0 rgba(153, 153, 153, 0.15);
+
+  /* ---- Spacing (no formal scale in source — derived from observed values) ---- */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 20px;
+  --s-6: 24px;
+  --s-7: 32px;
+  --s-8: 40px;
+  --s-9: 48px;
+  --s-10: 64px;
+  --s-11: 80px;
+  --s-12: 120px;
+
+  /* container paddings: 16 mobile / 32 tablet / 80 desktop */
+  --container-pad-mobile:  16px;
+  --container-pad-tablet:  32px;
+  --container-pad-desktop: 80px;
+  --container-max:         1440px;
+
+  /* ---- Breakpoints (informational) ---- */
+  --bp-sm: 575px;
+  --bp-md: 768px;
+  --bp-lg: 1200px;
+  --bp-xl: 1440px;
+
+  /* ---- Type scale (derived from components) ---- */
+  --fs-display:  70px;   /* CTitle desktop */
+  --fs-h1-tab:   56px;   /* CTitle tablet */
+  --fs-h1:       32px;   /* CTitle mobile */
+  --fs-h2:       40px;   /* PlatformCard title md */
+  --fs-h3:       28px;   /* PlatformCard title mobile */
+  --fs-lead:     24px;   /* Hero description md */
+  --fs-body-lg:  18px;
+  --fs-body:     16px;
+  --fs-body-sm:  14px;
+  --fs-meta:     11px;   /* Announcement badge */
+
+  --lh-tight:   1;       /* display/headlines — Pragmatica is set to 1 */
+  --lh-snug:    1.15;
+  --lh-normal:  1.3;     /* body / paragraphs */
+
+  --letter-display: -0.42px; /* CButton */
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* =====================  SEMANTIC TYPE  ===================== */
+
+html {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.cp-display,
+h1.cp-display {
+  font-family: var(--font-display);
+  font-weight: 800; /* Pragmatica Black */
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.5px;
+  text-wrap: balance;
+  margin: 0;
+}
+
+.cp-h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-h1-tab);
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+
+.cp-h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
+  margin: 0;
+}
+
+.cp-h3 {
+  font-family: var(--font-display);
+  font-weight: 600; /* Pragmatica Bold */
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  margin: 0;
+}
+
+.cp-lead {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.cp-body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+  margin: 0;
+}
+
+.cp-body-sm {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+  margin: 0;
+}
+
+.cp-eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--fs-meta);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--fg-3);
+  margin: 0;
+}
+
+/* The signature green inline pill used inside titles ("Over 50M", numbers) */
+.cp-highlight {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  background: var(--highlight-bg);
+  color: var(--highlight-fg);
+  line-height: 1;
+  padding: 0 0.4em;
+  border-radius: var(--r-badge);
+}
+
+/* Mono/code is not used in product. Keep a placeholder for completeness. */
+.cp-mono {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: var(--fs-body-sm);
+}
